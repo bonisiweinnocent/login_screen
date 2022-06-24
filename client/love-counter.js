@@ -3,14 +3,7 @@ export default function LoveCounter() {
 
     return {
         loveCounter: Alpine.$persist(0),
-        init() {
-            setInterval(() => {
-                if (this.loveCounter > 0) {
-                    this.loveCounter--;
-                }
-                console.log(this.loveCounter)
-            }, 3000)
-        },
+       
         love() {
             this.loveCounter++
         },
@@ -27,6 +20,9 @@ export default function LoveCounter() {
             } else {
                 return "💚💚💚";
             }
+        },
+        loveLess(){
+            this.loveCounter--
         }
 
     }
